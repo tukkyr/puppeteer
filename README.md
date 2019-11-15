@@ -7,14 +7,18 @@ https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md#ru
 ## 利用方法
 
 ```sh
+docker build -t puppeteer:latest .
 docker run --cap-add=SYS_ADMIN -it puppeteer:latest bash
+pptruser@hostname:vim hello.js
 ```
 
-でbashで編集
+でbashを立ち上げvimで編集
+
 
 ```sh
 docker build -t puppeteer:latest .
 docker volume create puppeteer-project
 docker run --cap-add=SYS_ADMIN --mount src=puppeteer,dst=/workspace -w /workspace -it puppeteer:latest bash
 ````
-とすればvolumeを永続化できる
+
+とすればvolumeの永続化もできる
