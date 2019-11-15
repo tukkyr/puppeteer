@@ -13,7 +13,7 @@ docker run --cap-add=SYS_ADMIN -it puppeteer:latest bash
 でbashで編集
 
 ```sh
-docker image create puppeteer-project
+docker volume create puppeteer-project
 docker run --cap-add=SYS_ADMIN --mount src=puppeteer,dst=/workspace -w /workspace -it puppeteer:latest bash
 ````
 とすればvolumeを永続化できる
