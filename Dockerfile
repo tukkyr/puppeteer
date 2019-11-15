@@ -32,6 +32,8 @@ RUN npm i puppeteer \
 
 RUN apt-get update && apt-get install -y vim
 
+RUN mkdir /workspace && chown -R pptruser:pptruser /workspace
+
 # Run everything after as non-privileged user.
 USER pptruser
 
