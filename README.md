@@ -22,3 +22,25 @@ docker run --cap-add=SYS_ADMIN --mount src=puppeteer-vol,dst=/workspace -w /work
 ````
 
 とすればvolumeの永続化もできる
+
+```sh
+yarn add puppeteer
+```
+
+```js
+// hello.js
+const puppeteer = require('puppeteer');
+
+(async () => {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto('https://example.com');
+  await page.screenshot({path: 'example.png'});
+
+  await browser.close();
+})();
+```
+
+```sh
+node hello.js
+```
