@@ -17,8 +17,8 @@ pptruser@hostname:vim hello.js
 
 ```sh
 docker build -t puppeteer:latest .
-docker volume create puppeteer-project
-docker run --cap-add=SYS_ADMIN --mount src=puppeteer,dst=/workspace -w /workspace -it puppeteer:latest bash
+docker volume create puppeteer-vol
+docker run --cap-add=SYS_ADMIN --mount src=puppeteer-vol,dst=/workspace -w /workspace -it puppeteer:latest bash
 ````
 
 とすればvolumeの永続化もできる
